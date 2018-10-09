@@ -1,0 +1,2 @@
+# Kotori
+Kotlinで作られたNukkitXプラグイン
