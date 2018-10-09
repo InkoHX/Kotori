@@ -4,10 +4,11 @@ import cn.nukkit.plugin.PluginBase
 
 class Main : PluginBase() {
     override fun onEnable() {
-        logger.info("test")
+        server.pluginManager.registerEvents(EventListener(this), this)
+        logger.notice("ロード :)")
     }
 
     override fun onDisable() {
-        logger.info("test")
+        logger.notice("アンロード :(")
     }
 }
