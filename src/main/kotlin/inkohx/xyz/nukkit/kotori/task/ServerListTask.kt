@@ -1,4 +1,4 @@
-package inkohx.xyz.nukkit.kotori.serverlist
+package inkohx.xyz.nukkit.kotori.task
 
 import cn.nukkit.scheduler.PluginTask
 import inkohx.xyz.nukkit.kotori.Main

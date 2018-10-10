@@ -9,4 +9,3 @@ serverlist-token: ""
 
 # プレイヤーの名前に空白があった場合にアンダーバーに変換します。(trueにする事を推奨)
 player-namefix: false
-
