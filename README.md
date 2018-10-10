@@ -1,3 +1,2 @@
-# Kotori(Nukkit)
-Kotlinで作られたNukkitXプラグインです。  
-Kotlinの練習用リポジトリだけどいつか機能増やしたいですね。
+# Kotori Survival Network
+Kotlinの練習用リポジトリ
