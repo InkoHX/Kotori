@@ -1,0 +1,5 @@
+# このプラグインのon・offを設定出来ます。
+# (true = on false = off)
+enable: false
+# プレイヤーの名前に空白があった場合にアンダーバーに変換します。(trueにする事を推奨)
+namefixer: false
