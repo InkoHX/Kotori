@@ -1,3 +1,3 @@
-# Kotori
-Kotlinで作られたNukkitXプラグイン  
-色々試すように使ってます。(つまり練習用)
+# Kotori(Nukkit)
+Kotlinで作られたNukkitXプラグインです。  
+Kotlinの練習用リポジトリだけどいつか機能増やしたいですね。
