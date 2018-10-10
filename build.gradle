@@ -36,6 +36,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "cn.nukkit:nukkit:1.0-SNAPSHOT"
+    compile 'com.ning:async-http-client:1.9.40'
 }
 
 compileKotlin {
