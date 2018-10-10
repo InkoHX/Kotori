@@ -1,5 +1,12 @@
 # このプラグインのon・offを設定出来ます。
 # (true = on false = off)
-enable: false
+plugin-enable: false
+
+# ServerList
+# この機能をオンにする前に必ずTOKENを入力してください。
+serverlist-enable: false
+serverlist-token: ""
+
 # プレイヤーの名前に空白があった場合にアンダーバーに変換します。(trueにする事を推奨)
-namefixer: false
+player-namefix: false
+
