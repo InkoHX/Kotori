@@ -2,6 +2,7 @@ package inkohx.xyz.nukkit.kotori
 
 import cn.nukkit.plugin.PluginBase
 import inkohx.xyz.nukkit.kotori.anticheat.AntiFly
+import inkohx.xyz.nukkit.kotori.anticheat.AntiReach
 import inkohx.xyz.nukkit.kotori.anticheat.AntiSpam
 import inkohx.xyz.nukkit.kotori.anticheat.AntiToolbox
 import inkohx.xyz.nukkit.kotori.serverlist.ServerListAPI
@@ -40,5 +41,6 @@ class Main : PluginBase() {
         server.pluginManager.registerEvents(AntiSpam(), this)
         server.pluginManager.registerEvents(AntiFly(), this)
         server.pluginManager.registerEvents(AntiToolbox(), this)
+        server.pluginManager.registerEvents(AntiReach(), this)
     }
 }
