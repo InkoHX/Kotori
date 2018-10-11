@@ -6,6 +6,7 @@ import inkohx.xyz.nukkit.kotori.anticheat.AntiReach
 import inkohx.xyz.nukkit.kotori.anticheat.AntiSpam
 import inkohx.xyz.nukkit.kotori.anticheat.AntiToolbox
 import inkohx.xyz.nukkit.kotori.serverlist.ServerListAPI
+import inkohx.xyz.nukkit.kotori.survival.SurvivalCore
 import inkohx.xyz.nukkit.kotori.task.ServerListTask
 
 class Main : PluginBase() {
@@ -18,6 +19,7 @@ class Main : PluginBase() {
 
     override fun onEnable() {
         if (config.get("plugin-enable") as Boolean) logger.notice("Kotoriをロード :)") else server.pluginManager.disablePlugin(this)
+        this.server.loadLevel("survival")
         registerEvents()
         ServerList()
     }
@@ -30,7 +32,7 @@ class Main : PluginBase() {
     private fun ServerList() {
         if (config.get("serverlist-enable") as Boolean) {
             logger.notice(api.login(config.get("serverlist-token").toString()))
-            server.scheduler.scheduleRepeatingTask(ServerListTask(this), 20)
+            server.scheduler.scheduleRepeatingTask(ServerListTask(this), 600)
         } else {
             logger.warning("ServerListは使わない設定になっています。")
         }
@@ -42,5 +44,6 @@ class Main : PluginBase() {
         server.pluginManager.registerEvents(AntiFly(), this)
         server.pluginManager.registerEvents(AntiToolbox(), this)
         server.pluginManager.registerEvents(AntiReach(), this)
+        server.pluginManager.registerEvents(SurvivalCore(), this)
     }
 }
