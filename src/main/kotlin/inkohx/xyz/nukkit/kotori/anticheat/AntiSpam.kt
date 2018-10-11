@@ -72,8 +72,7 @@ class AntiSpam : Listener {
                 }
             }
             if (spam.containsKey(name) && spam[name]!! > 15) {
-                val reason = AntiCheat().getBannedReason("スパム")
-                player.kick(reason, false)
+                player.kick(AntiCheat().getBannedReason("スパム"), false)
                 Server.getInstance().ipBans.addBan(player.address, "スパム")
                 Server.getInstance().nameBans.addBan(player.name, "スパム")
             }
