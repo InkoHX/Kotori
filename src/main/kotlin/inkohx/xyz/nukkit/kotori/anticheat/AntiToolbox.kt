@@ -10,11 +10,9 @@ class AntiToolbox : Listener {
     @EventHandler
     fun AntiToolbox(event: DataPacketReceiveEvent) {
         val packet = event.packet
-        if (packet is LoginPacket) {
-            if (packet.clientId.toInt() == 0) {
-                event.setCancelled()
-                Server.getInstance().nameBans.addBan(packet.username.replace(' ', '_'), "Toolbox")
-            }
+        if (packet is LoginPacket && packet.clientId.toInt() == 0) {
+            event.setCancelled()
+            Server.getInstance().nameBans.addBan(packet.username.replace(' ', '_'), "Toolbox")
         }
     }
 }
