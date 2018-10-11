@@ -2,13 +2,15 @@ package inkohx.xyz.nukkit.kotori.survival
 
 import cn.nukkit.Player
 import cn.nukkit.Server
+import cn.nukkit.block.Block
 import cn.nukkit.event.EventHandler
 import cn.nukkit.event.Listener
 import cn.nukkit.event.block.BlockBreakEvent
 import cn.nukkit.event.entity.EntityLevelChangeEvent
-import cn.nukkit.event.player.PlayerJoinEvent
+import cn.nukkit.event.player.PlayerInteractEvent
 import cn.nukkit.item.Item
 import cn.nukkit.level.Position
+import cn.nukkit.potion.Effect
 import java.util.*
 
 class SurvivalCore : Listener {
@@ -25,10 +27,7 @@ class SurvivalCore : Listener {
     fun LevelChange(event: EntityLevelChangeEvent) {
         val entity = event.entity
         if (entity is Player) {
-            if (event.target.name == "survival") {
-                entity.teleport(Position(Random().nextInt(1000).toDouble(), 255.0, Random().nextInt(1000).toDouble(), Server.getInstance().getLevelByName("survival")))
-                entity.sendTitle("§aSTART", "§aSurvival §bNetwork", 40, 60, 40)
-            }
+            if (event.target.name == "survival") entity.setGamemode(Player.SURVIVAL) else entity.setGamemode(Player.ADVENTURE)
         }
     }
 
@@ -39,6 +38,13 @@ class SurvivalCore : Listener {
     }
 
     @EventHandler
-    fun PlayerJoin(event: PlayerJoinEvent) {
+    fun Tap(event: PlayerInteractEvent) {
+        val player = event.player
+        if (event.block.id == Block.DIAMOND_BLOCK) {
+            player.addEffect(Effect.getEffect(Effect.REGENERATION).setDuration(30 * 20).setAmplifier(254))
+            player.addEffect(Effect.getEffect(Effect.DAMAGE_RESISTANCE).setDuration(30 * 20).setAmplifier(254))
+            player.teleport(Position((Math.random() * 5000), 255.0, (Math.random() * 5000), Server.getInstance().getLevelByName("survival")))
+            player.sendTitle("§aSTART", "§aSurvival §bNetwork", 40, 60, 40)
+        }
     }
 }
