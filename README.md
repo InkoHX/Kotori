@@ -1,2 +1,2 @@
-# Kotori
-NukkitXプラグインです。
+# Survival
+NukkitX用のサバイバルプラグイン
