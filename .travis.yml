@@ -1,5 +1,7 @@
 language: java
-script: chmod +x ./gradlew build --scan
+dist: trusty
+script: 
+  - ./gradlew build --scan
 matrix:
   include:
     - os: linux
@@ -11,7 +13,6 @@ matrix:
     - os: linux
       sudo: required
       jdk: oraclejdk9
-
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
