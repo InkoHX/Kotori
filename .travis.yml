@@ -2,6 +2,8 @@ language: java
 dist: trusty
 script: 
   - ./gradlew build --scan
+before_script: 
+  - chmod +x gradlew
 matrix:
   include:
     - os: linux
