@@ -1,4 +1,4 @@
-package inkohx.xyz.nukkit.kotori.anticheat
+package inkohx.xyz.nukkit.survival.anticheat
 
 import cn.nukkit.Player
 import cn.nukkit.event.EventHandler

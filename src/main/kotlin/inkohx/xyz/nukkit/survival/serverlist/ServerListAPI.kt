@@ -1,4 +1,4 @@
-package inkohx.xyz.nukkit.kotori.serverlist
+package inkohx.xyz.nukkit.survival.serverlist
 
 import java.io.IOException
 import java.util.HashMap

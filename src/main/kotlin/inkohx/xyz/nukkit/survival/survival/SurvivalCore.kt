@@ -1,4 +1,4 @@
-package inkohx.xyz.nukkit.kotori.survival
+package inkohx.xyz.nukkit.survival.survival
 
 import cn.nukkit.Player
 import cn.nukkit.Server
@@ -14,7 +14,7 @@ import cn.nukkit.potion.Effect
 import java.util.*
 
 class SurvivalCore : Listener {
-    fun RandomFood(player: Player) {
+    private fun RandomFood(player: Player) {
         if (player.level.name == "world") return
         if (Random().nextInt(21) == Random().nextInt(21)) {
             player.inventory.addItem(Item(Item.STEAK, 0, 1))

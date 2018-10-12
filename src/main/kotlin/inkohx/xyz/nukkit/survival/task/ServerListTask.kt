@@ -1,7 +1,7 @@
-package inkohx.xyz.nukkit.kotori.task
+package inkohx.xyz.nukkit.survival.task
 
 import cn.nukkit.scheduler.PluginTask
-import inkohx.xyz.nukkit.kotori.Main
+import inkohx.xyz.nukkit.survival.Main
 
 class ServerListTask(owner: Main) : PluginTask<Main>(owner) {
 

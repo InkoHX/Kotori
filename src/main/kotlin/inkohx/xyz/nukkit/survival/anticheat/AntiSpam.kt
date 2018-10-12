@@ -1,4 +1,4 @@
-package inkohx.xyz.nukkit.kotori.anticheat
+package inkohx.xyz.nukkit.survival.anticheat
 
 /*
  * 参考にしたプラグイン

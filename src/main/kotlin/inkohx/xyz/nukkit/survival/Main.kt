@@ -1,13 +1,13 @@
-package inkohx.xyz.nukkit.kotori
+package inkohx.xyz.nukkit.survival
 
 import cn.nukkit.plugin.PluginBase
-import inkohx.xyz.nukkit.kotori.anticheat.AntiFly
-import inkohx.xyz.nukkit.kotori.anticheat.AntiReach
-import inkohx.xyz.nukkit.kotori.anticheat.AntiSpam
-import inkohx.xyz.nukkit.kotori.anticheat.AntiToolbox
-import inkohx.xyz.nukkit.kotori.serverlist.ServerListAPI
-import inkohx.xyz.nukkit.kotori.survival.SurvivalCore
-import inkohx.xyz.nukkit.kotori.task.ServerListTask
+import inkohx.xyz.nukkit.survival.anticheat.AntiFly
+import inkohx.xyz.nukkit.survival.anticheat.AntiReach
+import inkohx.xyz.nukkit.survival.anticheat.AntiSpam
+import inkohx.xyz.nukkit.survival.anticheat.AntiToolbox
+import inkohx.xyz.nukkit.survival.serverlist.ServerListAPI
+import inkohx.xyz.nukkit.survival.survival.SurvivalCore
+import inkohx.xyz.nukkit.survival.task.ServerListTask
 
 class Main : PluginBase() {
 
@@ -18,7 +18,7 @@ class Main : PluginBase() {
     }
 
     override fun onEnable() {
-        if (config.get("plugin-enable") as Boolean) logger.notice("Kotoriをロード :)") else server.pluginManager.disablePlugin(this)
+        if (config.get("plugin-enable") as Boolean) logger.notice("ロード :)") else server.pluginManager.disablePlugin(this)
         this.server.loadLevel("survival")
         registerEvents()
         ServerList()

@@ -1,4 +1,4 @@
-package inkohx.xyz.nukkit.kotori
+package inkohx.xyz.nukkit.survival
 
 import cn.nukkit.Player
 import cn.nukkit.event.EventHandler
