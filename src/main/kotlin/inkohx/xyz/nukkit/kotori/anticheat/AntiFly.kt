@@ -11,11 +11,11 @@ class AntiFly : Listener {
         val player = event.player
         if (player.isOp) return
         if (event.isFlying) {
-            player.kick(AntiCheat().getBannedReason("Fly"))
+            player.kick(AntiCheat().getBannedReason("Fly"), false)
             Server.getInstance().nameBans.addBan(player.name, "Fly")
             Server.getInstance().ipBans.addBan(player.address, "Fly")
         } else {
-            player.kick(AntiCheat().getBannedReason("Fly"))
+            player.kick(AntiCheat().getBannedReason("Fly"), false)
             Server.getInstance().nameBans.addBan(player.name, "Fly")
             Server.getInstance().ipBans.addBan(player.address, "Fly")
         }
