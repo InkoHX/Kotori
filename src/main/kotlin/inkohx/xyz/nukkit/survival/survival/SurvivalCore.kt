@@ -8,12 +8,15 @@ import cn.nukkit.event.Listener
 import cn.nukkit.event.block.BlockBreakEvent
 import cn.nukkit.event.entity.EntityLevelChangeEvent
 import cn.nukkit.event.player.PlayerInteractEvent
+import cn.nukkit.event.player.PlayerJoinEvent
 import cn.nukkit.item.Item
 import cn.nukkit.level.Position
 import cn.nukkit.potion.Effect
+import inkohx.xyz.nukkit.survival.Main
+import inkohx.xyz.nukkit.survival.task.JoinWindowTask
 import java.util.*
 
-class SurvivalCore : Listener {
+class SurvivalCore(private val main: Main) : Listener {
     private fun RandomFood(player: Player) {
         if (player.level.name == "world") return
         if (Random().nextInt(21) == Random().nextInt(21)) {
@@ -46,5 +49,11 @@ class SurvivalCore : Listener {
             player.teleport(Position((Math.random() * 5000), 255.0, (Math.random() * 5000), Server.getInstance().getLevelByName("survival")))
             player.sendTitle("§aSTART", "§aSurvival §bNetwork", 40, 60, 40)
         }
+    }
+
+    @EventHandler
+    fun Join(event: PlayerJoinEvent) {
+        val player = event.player
+        main.server.scheduler.scheduleDelayedTask(JoinWindowTask(main, player), 60)
     }
 }
