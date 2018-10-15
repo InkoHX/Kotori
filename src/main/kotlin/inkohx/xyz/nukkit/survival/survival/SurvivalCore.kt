@@ -54,6 +54,6 @@ class SurvivalCore(private val main: Main) : Listener {
     @EventHandler
     fun Join(event: PlayerJoinEvent) {
         val player = event.player
-        main.server.scheduler.scheduleDelayedTask(JoinWindowTask(main, player), 60)
+        main.server.scheduler.scheduleDelayedTask(JoinWindowTask(main, player), 100)
     }
 }
