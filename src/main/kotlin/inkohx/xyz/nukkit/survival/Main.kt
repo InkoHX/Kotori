@@ -44,6 +44,6 @@ class Main : PluginBase() {
         server.pluginManager.registerEvents(AntiFly(), this)
         server.pluginManager.registerEvents(AntiToolbox(), this)
         server.pluginManager.registerEvents(AntiReach(), this)
-        server.pluginManager.registerEvents(SurvivalCore(), this)
+        server.pluginManager.registerEvents(SurvivalCore(this), this)
     }
 }
